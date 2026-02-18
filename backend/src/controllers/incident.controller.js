@@ -97,7 +97,7 @@ const getIncidents = async (req, res) => {
         }
 
         if (search) {
-            filter.$text = { $search: search };
+            filter.title = { $regex: search, $options: 'i' };
         }
 
         const allowedSortFields = [
