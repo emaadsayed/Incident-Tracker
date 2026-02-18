@@ -10,9 +10,9 @@ const createIncident = async (req, res) => {
     try {
         const { title, service, severity, status, owner, summary } = req.body;
 
-        if (!title || !service || !severity) {
+        if (!title || !service || !severity || !status) {
             return res.status(400).json({
-                message: 'title, service and severity are required'
+                message: 'title, service, status and severity are required'
             });
         }
 
